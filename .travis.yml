@@ -1,0 +1,28 @@
+dist: bionic
+language: python
+
+addons:
+  apt:
+    packages:
+      - gcc
+      - g++
+
+python:
+  - "3.6"
+  - "3.7"
+
+cache: pip
+
+install:
+  - pip install --user cython
+  - pip install .
+
+script:
+  - python ./tests/*.py
+
+branches:
+  only:
+    - travis
+
+notifications:
+  email: false
