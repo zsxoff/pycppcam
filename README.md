@@ -37,6 +37,8 @@ See more in `examples` dir.
 * gcc
 * g++
 
+If you wanna use Python 2 instead of Python 3, change all packages and command to Python 2 version (e.g. `python3` -> `python2`).
+
 ### Ubuntu
 
 ```bash
