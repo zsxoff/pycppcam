@@ -20,9 +20,5 @@ install:
 script:
   - python test.py
 
-branches:
-  only:
-    - travis
-
 notifications:
   email: false
