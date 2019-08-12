@@ -11,8 +11,23 @@ def main():
         'c_string_encoding': 'utf-8'
     }
 
-    ext_modules = cythonize([Extension('cppcam', ['src/cppcam.pyx'])],
-                            compiler_directives=compiler_directives)
+    ext_modules = cythonize(
+        [
+            Extension(
+                'cppcam',
+                [
+                    'src/cppcam.pyx',
+                ],
+                extra_compile_args=[
+                    "-std=c++11",
+                ],
+                extra_link_args=[
+                    "-std=c++11",
+                ],
+            )
+        ],
+        compiler_directives=compiler_directives,
+    )
 
     setup(name='cppcam',
           version='0.1.0',
