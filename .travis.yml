@@ -1,4 +1,3 @@
-dist: bionic
 language: python
 
 addons:
@@ -7,9 +6,20 @@ addons:
       - gcc
       - g++
 
-python:
-  - "3.6"
-  - "3.7"
+matrix:
+  include:
+    - name: "Python 3.7 on Bionic Linux"
+      python: "3.7"
+      dist: bionic
+    - name: "Python 3.6 on Bionic Linux"
+      python: "3.6"
+      dist: bionic
+    - name: "Python 3.7 on Xenial Linux"
+      python: "3.7"
+      dist: xenial
+    - name: "Python 3.6 on Xenial Linux"
+      python: "3.6"
+      dist: xenial
 
 cache: pip
 
