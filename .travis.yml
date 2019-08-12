@@ -20,6 +20,12 @@ matrix:
     - name: "Python 3.6 on Xenial Linux"
       python: "3.6"
       dist: xenial
+    - name: "Python 2.7 on Bionic Linux"
+      python: "2.7"
+      dist: bionic
+    - name: "Python 2.7 on Xenial Linux"
+      python: "2.7"
+      dist: xenial
 
 cache: pip
 
