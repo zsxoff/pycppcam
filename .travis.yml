@@ -14,7 +14,7 @@ python:
 cache: pip
 
 install:
-  - pip install --user cython
+  - pip install -q cython
   - pip install .
 
 script:
