@@ -55,7 +55,7 @@ cdef class Camera:
         cdef int w = size[0]
         cdef int h = size[1]
 
-        cdef int err = self.cam.init(str.encode(device), w, h)
+        cdef int err = self.cam.init(str(device), w, h)
 
         if err == 0:
             return 0
