@@ -1,5 +1,7 @@
 # cppcam
 
+[![Build Status](https://travis-ci.org/zsxoff/cppcam.svg?branch=master)](https://travis-ci.org/zsxoff/cppcam)
+
 **cppcam** is a simple library for get image with a webcam for Python. The program uses code written in C++ with [Cython](https://cython.org/) bindings.
 
 *Disclaimer:* This project was created more as an experimental one and is unlikely to develop towards supporting new features. Use it if you really need it.
