@@ -8,12 +8,18 @@ addons:
 
 matrix:
   include:
+    - name: "Python 3.8 on Bionic Linux"
+      python: "3.8"
+      dist: bionic
     - name: "Python 3.7 on Bionic Linux"
       python: "3.7"
       dist: bionic
     - name: "Python 3.6 on Bionic Linux"
       python: "3.6"
       dist: bionic
+    - name: "Python 3.8 on Xenial Linux"
+      python: "3.7"
+      dist: xenial
     - name: "Python 3.7 on Xenial Linux"
       python: "3.7"
       dist: xenial
