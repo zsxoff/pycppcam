@@ -30,11 +30,11 @@ matrix:
 cache: pip
 
 install:
-  - pip install -q cython
+  - pip install -r requirements.txt
   - pip install .
 
 script:
-  - python test.py
+  - pytest
 
 notifications:
   email: false
