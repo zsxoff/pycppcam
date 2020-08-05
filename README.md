@@ -1,6 +1,12 @@
 # pycppcam
 
+> Simple webcam library for Python 3 written in C++ with Cython.
+
+---
+
 [![Build Status](https://travis-ci.org/zsxoff/pycppcam.svg?branch=master)](https://travis-ci.org/zsxoff/pycppcam)
+
+---
 
 **pycppcam** is a simple library for get image with a webcam for Python. The program uses code written in C++ with [Cython](https://cython.org/) bindings.
 
@@ -31,33 +37,14 @@ See more in `examples` dir.
 
 ## Dependencies
 
-* python2 or python3
-* pip
-* cython
+* python3
 * gcc
 * g++
 
-If you wanna use Python 2 instead of Python 3, change all packages and command to Python 2 version (e.g. `python3` -> `python2`).
-
-### Ubuntu and Debian
+On Ubuntu you can install it like:
 
 ```bash
 sudo apt-get install python3 python3-pip gcc g++
-pip3 install --user cython
-```
-
-### Fedora
-
-```bash
-sudo dnf install python3 python3-pip python3-devel gcc gcc-c++
-pip3 install --user cython
-```
-
-### Arch Linux
-
-```bash
-sudo pacman -S --needed python python-pip gcc
-pip3 install --user cython
 ```
 
 ## **Installation**
@@ -67,48 +54,30 @@ Clone this repo and go to project folder:
 ```bash
 git clone https://github.com/zsxoff/pycppcam.git
 cd pycppcam
-```
-
-Run command in project directory
-
-```bash
-pip3 install --user .
-```
-
-or
-
-```bash
-python3 -m pip install --user .
+pip install --user -r requirements.txt
+pip install --user .
 ```
 
 If you use [venv](<https://docs.python.org/3/library/venv.html>), [Virtualenv](<https://virtualenv.pypa.io/en/latest/>), [Anaconda](<https://www.anaconda.com/>) and etc., you don't need `--user` option.
 
-Finally, see examples in `examples` directory or run tests in `tests` if you want it.
-
 ## **Known issues**
 
 **Issue**: `gcc` throws exceptions at compile process like `only available with -std=c++11`.
-
 **Solution**: execute command `export CFLAGS="-std=c++11"` before install command.
 
----
-
 **Issue**: `gcc` throws exceptions at compile process `fatal error: Python.h: No such file or directory`.
-
 **Solution**: check if you installed `python3-devel` package.
 
----
-
 **Issue**: Camera raise `cppcam.BufDqbufError` during `read_frame()`.
-
 **Solution**: Try to change `#define MAX_IMG_SIZE` in `src/cpp_camera.h` like `20 * 1024 * 1024` or bigger, where `20` is a maximum size of image in megabytes.
 
 ## TODO
 
 * Fix camera raise `cppcam.BufDqbufError` during `read_frame()` due to `#define MAX_IMG_SIZE` in `src/cpp_camera.h`.
-
 * Improve `setup.py` file.
 
 ## License
 
-See [LICENSE](<https://github.com/zsxoff/pycppcam/blob/master/LICENSE>) file.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
+This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license (see [LICENSE](<https://github.com/zsxoff/pycppcam/blob/master/LICENSE>) file).
