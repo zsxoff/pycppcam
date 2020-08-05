@@ -1,0 +1,68 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: check-ast
+      - id: check-builtin-literals
+      - id: check-byte-order-marker
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-symlinks
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: name-tests-test
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: isort
+        name: python - isort
+        stages: [commit]
+        language: system
+        entry: isort
+        types: [python]
+
+      - id: black
+        name: python - black
+        stages: [commit]
+        language: system
+        entry: black
+        types: [python]
+
+      - id: flake8
+        name: python - flake8
+        stages: [commit]
+        language: system
+        entry: flake8
+        types: [python]
+
+      - id: pylint
+        name: python - pylint
+        stages: [commit]
+        language: system
+        entry: pylint
+        types: [python]
+
+      - id: pytype
+        name: python - pytype
+        stages: [commit]
+        language: system
+        entry: pytype
+        types: [python]
+
+      - id: cpplint
+        name: C++ - cpplint
+        language: system
+        stages: [commit]
+        entry: cpplint
+        types: [c++]
+
+      - id: cppcheck
+        name: C++ - cppcheck
+        language: system
+        stages: [commit]
+        entry: cppcheck
+        types: [c++]
